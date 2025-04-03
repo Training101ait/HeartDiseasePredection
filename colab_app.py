@@ -26,28 +26,28 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.svm import SVC
 
 # Check if running in Colab
-try:
-    import google.colab
-    IN_COLAB = True
-    print("Running in Google Colab")
-except:
-    IN_COLAB = False
-    print("Not running in Google Colab")
+# try:
+#     import google.colab
+#     IN_COLAB = True
+#     print("Running in Google Colab")
+# except:
+#     IN_COLAB = False
+#     print("Not running in Google Colab")
 
-# Function to download the dataset
-def download_dataset():
-    if IN_COLAB:
-        from google.colab import files
-        uploaded = files.upload()
+# # Function to download the dataset
+# def download_dataset():
+#     if IN_COLAB:
+#         from google.colab import files
+#         uploaded = files.upload()
         
-        if 'heart_disease.csv' in uploaded:
-            print("Dataset uploaded successfully!")
-            return pd.read_csv('heart_disease.csv')
-        else:
-            print("Dataset not found in uploaded files, trying to download from a URL...")
+#         if 'heart_disease.csv' in uploaded:
+#             print("Dataset uploaded successfully!")
+#             return pd.read_csv('heart_disease.csv')
+#         else:
+#             print("Dataset not found in uploaded files, trying to download from a URL...")
     
     # Try to download from a URL (you would need to host the file somewhere)
-    url = "https://raw.githubusercontent.com/yourusername/heart_disease_dataset/main/heart_disease.csv"
+    url = "https://github.com/Training101ait/HeartDiseasePredection/blob/main/heart_disease.csv"
     try:
         print(f"Attempting to download dataset from {url}")
         response = requests.get(url)
